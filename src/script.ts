@@ -132,3 +132,64 @@ const userDetails = (id: stringOrNum, user: userType) => {
 };
 
 const sayHello = (user: userType) => {};
+
+// Function Signature ----
+
+let add: (a: number, b: number) => number;
+
+add = (x: number, y: number) => {
+  return x + y;
+};
+
+let calculation: (c: number, d: number, e: string) => number;
+
+calculation = (a: number, b: number, c: string) => {
+  if (c === "add") {
+    return a + b;
+  } else {
+    return a - b;
+  }
+};
+
+let userDetail: (
+  id: number | string,
+  userInfo: {
+    name: string;
+    age: number;
+  }
+) => void;
+
+userDetail = (
+  id: number | string,
+  user: {
+    // can change the name of object
+    name: string; // username: string but cant change the object value name
+    age: number;
+  }
+) => {};
+
+// Classes
+
+class Player {
+  name: string;
+  age: number;
+
+  constructor(n: string, a: number) {
+    this.name = n;
+    this.age = a;
+  }
+
+  play() {
+    console.log(`${this.name}'s age is ${this.age} years old`);
+  }
+}
+
+const raiyan = new Player("Raiyan", 20);
+//const rai = new Player("Raiyan", "40"); //type 'string' is not assignable to parameter of type 'number'.
+
+console.log(raiyan.age);
+
+const players: Player[] = [];
+
+//players.push("Raiyan"); //'string' is not assignable to parameter of type 'Player'.
+players.push(raiyan);
