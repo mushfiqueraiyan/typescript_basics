@@ -170,13 +170,16 @@ userDetail = (
 
 // Classes
 
+// Access Modifier
 class Player {
-  name: string;
-  age: number;
+  private name: string; // make it private so dont access from outside
+  public age: number; // access and edit from outside
+  readonly country: string; // only readable from outside cant edit
 
-  constructor(n: string, a: number) {
+  constructor(n: string, a: number, c: string) {
     this.name = n;
     this.age = a;
+    this.country = c;
   }
 
   play() {
@@ -184,7 +187,7 @@ class Player {
   }
 }
 
-const raiyan = new Player("Raiyan", 20);
+const raiyan = new Player("Raiyan", 20, "BD");
 //const rai = new Player("Raiyan", "40"); //type 'string' is not assignable to parameter of type 'number'.
 
 console.log(raiyan.age);
