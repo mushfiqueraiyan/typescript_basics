@@ -100,3 +100,35 @@ l = {
   name: "raiyan",
   age: "20",
 };
+
+const myFunc = () => {
+  console.log("Hello");
+};
+
+let yourFunc: Function;
+
+yourFunc = () => {
+  console.log(5);
+};
+
+const weFunc = (a: number, b: number, c?: string): number => {
+  //c?:string is optional
+  return a + b;
+};
+
+weFunc(9, 8);
+// weFunc("Mushfique", 5); // string and number ❌
+
+// Type Aliases -----
+
+type stringOrNum = string | number;
+type userType = {
+  name: string;
+  age: number;
+};
+
+const userDetails = (id: stringOrNum, user: userType) => {
+  console.log(`User id is ${id} name is ${name} and age is ${age}`);
+};
+
+const sayHello = (user: userType) => {};
