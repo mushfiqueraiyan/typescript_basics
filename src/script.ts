@@ -1,3 +1,5 @@
+//import { Sccoccer } from "./classes/Player.js";
+
 let placerName = "Raiyan 501";
 console.log(placerName);
 
@@ -196,3 +198,19 @@ const players: Player[] = [];
 
 //players.push("Raiyan"); //'string' is not assignable to parameter of type 'Player'.
 players.push(raiyan);
+
+// Interface in Typescript
+
+interface RectangleOptions {
+  width: number;
+  length: number;
+}
+
+function drawRectangle(options: RectangleOptions) {
+  let width = options.width;
+  let length = options.length;
+}
+
+let threeDOPtions = { width: 30, length: 20, heigth: 10 };
+
+drawRectangle(threeDOPtions);
